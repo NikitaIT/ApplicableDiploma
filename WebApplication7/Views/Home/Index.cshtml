@@ -1,0 +1,97 @@
+﻿@using WebApplication7.Models
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Название</h1>
+    <p class="lead"></p>
+    <p></p>
+</div>
+
+<div class="row">
+    
+        <form id="GetName" method="get" action="/">
+            <div class="col-md-3">
+                @Html.ListBox("countires", new MultiSelectList(Direction.DirectionStrings));
+            </div>
+            <div class="col-md-4">
+                <div class="">
+                    <a href="#" class="button">
+                        <span class="submit">Найди свою тему</span> <span class="submit">!</span>
+                        <input style="opacity: 0; position: absolute; top: 0; bottom: 0; right: 0; left: 0; width: 100%" type="submit" value="Jnghf" />
+                    </a>
+                    </div>
+                </div>
+</form>
+    </div>
+        <div class="left">
+           @foreach (var Event in ViewBag.Events)
+            {
+            <h3>@Event.Name</h3>
+            <p>@Event.Info</p>
+                <!--foreach (string direction in Event.Directions)
+                    {
+                        <p> direction </p>
+                    }
+                </p>-->
+                <p>Event.Compani.Name</p><p>Event.Compani.Info</p>
+           }
+</div>
+
+<style>
+    * {
+    box-sizing: border-box;
+}
+
+
+/* Базовые стили кнопки 3D */
+
+.button {
+  /* Относительное позиционирование */
+  position: relative;
+  /* Устанавливаем внутренние отступы */
+  padding: 15px 20px;
+  /* Убираем подчёркивание и выравниваем текст по центру */
+  text-decoration: none;
+  text-align: center;
+  /* Размер и начертание шрифта */
+  font-size: 28px;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  /* Эффект тени текста */
+  text-shadow: 1px 2px 2px #30698F;
+  /* Внешняя тень кнопки */
+  -webkit-box-shadow: 0px 9px 0px #3a7faa, 0px 9px 25px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 9px 0px #3a7faa, 0px 9px 25px rgba(0, 0, 0, 0.7);
+  -ms-box-shadow: 0px 9px 0px #3a7faa, 0px 9px 25px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 9px 0px #3a7faa, 0px 9px 25px rgba(0, 0, 0, 0.7);
+  /* Цвет текста */
+  color: #efe;
+  /* Цвет фона кнопки */
+  background-color: #458ecc;
+  /* Скругляем углы */
+  border-radius: 8px;
+  /* Убираем рамку */
+  border: none;
+  outline: 0 none;
+  overflow: hidden;
+  /* Курсор ввиде руки */
+  cursor: pointer;
+}
+
+/* Стиль кнопки при нажатии */
+
+.button:active {
+  box-shadow: 0px 3px 0px #3a7faa, 0px 3px 6px rgba(0, 0, 0, 0.9);
+  top: 6px;
+}
+
+/* Стиль выделения букв */
+
+.submit {
+  /* Трансформируем буквы в заглавные и меням цвет */
+  text-transform: uppercase;
+  color: #efd959;
+}
+</style>
